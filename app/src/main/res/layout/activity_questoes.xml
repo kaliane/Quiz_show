@@ -12,29 +12,45 @@
         android:id="@+id/pergunta"
         android:layout_width="match_parent"
         android:layout_height="91dp"
-        android:text="TextView" />
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:layout_marginBottom="50dp"/>
 
     <Button
         android:id="@+id/resposta1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="alternativa1"
         android:text="Button" />
 
     <Button
         android:id="@+id/resposta2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="alternativa2"
         android:text="Button" />
 
     <Button
         android:id="@+id/resposta3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="Button"
+        android:onClick="alternativa3"/>
 
     <Button
         android:id="@+id/resposta4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="Button"
+        android:onClick="alternativa4"/>
+
+    <Button
+        android:id="@+id/proximo"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:onClick="proximaquestao"
+        android:text="Próximo"
+        android:visibility="invisible"
+        android:layout_marginTop="50dp"/>
 </LinearLayout>

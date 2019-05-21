@@ -1,7 +1,6 @@
 package utf.com.br.quiz;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Random;
 
@@ -177,7 +176,7 @@ public class Matrizes {
             }
         }
 
-        Collections.shuffle(Arrays.asList(respostas));
+        Collections.shuffle(respostas);
 
         return respostas;
     }

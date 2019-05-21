@@ -3,4 +3,7 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="Errada">#D8F44336</color>
+    <color name="Certa">#CE60E676</color>
+    <color name="Padrao">#4D778181</color>
 </resources>
