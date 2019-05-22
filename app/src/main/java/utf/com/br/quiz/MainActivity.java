@@ -16,11 +16,31 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void animaisclick(View view){
+    public void animaisClick(View view){
 
         Intent intent = new Intent(this, Questoes.class);
         intent.putExtra("Animais", "Animais");
         startActivity(intent);
+    }
 
+    public void cinemaClick(View view){
+
+        Intent intent = new Intent(this, Questoes.class);
+        intent.putExtra("Cinema", "Cinema");
+        startActivity(intent);
+    }
+
+    public void geraisClick(View view){
+
+        Intent intent = new Intent(this, Questoes.class);
+        intent.putExtra("Gerais", "Gerais");
+        startActivity(intent);
+    }
+
+    public void jogosClick(View view){
+
+        Intent intent = new Intent(this, Questoes.class);
+        intent.putExtra("Jogos", "Jogos");
+        startActivity(intent);
     }
 }

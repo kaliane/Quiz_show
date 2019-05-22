@@ -1,9 +1,8 @@
 package utf.com.br.quiz;
 
 import android.content.Intent;
-import android.support.annotation.DrawableRes;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -12,8 +11,9 @@ import java.util.ArrayList;
 
 public class Questoes extends AppCompatActivity {
     Matrizes matrizes = new Matrizes();
+    String[][] MatrizPadrao = new String[9][15];
     ArrayList<Integer> respostas = new ArrayList<Integer>();
-    int coluna, acertosAnimais=0, acertosCinema=0, acertosJogos=0, acertosGerais=0;
+    int coluna, acertos=0;
 
     TextView pergunta;
     Button resposta1;
@@ -37,19 +37,49 @@ public class Questoes extends AppCompatActivity {
         if(getIntent().hasExtra("Animais")){
             getSupportActionBar().setTitle("Animais");
             matrizes.alimentaAnimais();
+            MatrizPadrao = matrizes.animais;
             coluna = 0;
 
             carregarProximaQuestao();
 
+        }else if(getIntent().hasExtra("Cinema")){
+            getSupportActionBar().setTitle("Cinema");
+            matrizes.alimentaCinema();
+            MatrizPadrao = matrizes.cinema;
+            coluna = 0;
+
+            carregarProximaQuestao();
+
+        }else if(getIntent().hasExtra("Gerais")){
+            getSupportActionBar().setTitle("Conhecimentos Gerais");
+            matrizes.alimentaGerais();
+            MatrizPadrao = matrizes.gerais;
+            coluna = 0;
+
+            carregarProximaQuestao();
+
+        }else if(getIntent().hasExtra("Jogos")){
+            getSupportActionBar().setTitle("Jogos");
+            matrizes.alimentaJogos();
+            MatrizPadrao = matrizes.jogos;
+            coluna = 0;
+
+            carregarProximaQuestao();
         }
     }
 
     public void carregarScore(){
         Intent intent = new Intent(this, Score.class);
-        intent.putExtra("Animais", acertosAnimais);
-        intent.putExtra("Cinema", acertosCinema);
-        intent.putExtra("Jogos", acertosJogos);
-        intent.putExtra("Gerais", acertosGerais);
+
+        if(getIntent().hasExtra("Animais")){
+            intent.putExtra("Animais", acertos);
+        }else if(getIntent().hasExtra("Cinema")){
+            intent.putExtra("Cinema", acertos);
+        }else if(getIntent().hasExtra("Gerais")){
+            intent.putExtra("Jogos", acertos);
+        }else if(getIntent().hasExtra("Jogos")){
+            intent.putExtra("Gerais", acertos);
+        }
         startActivity(intent);
     }
 
@@ -64,12 +94,12 @@ public class Questoes extends AppCompatActivity {
         resposta2.setClickable(true);
         resposta3.setClickable(true);
         resposta4.setClickable(true);
-        pergunta.setText(matrizes.animais[0][coluna]);
-        respostas = matrizes.sortearRespostas(matrizes.animais, coluna);
-        resposta1.setText(matrizes.animais[respostas.get(0)][coluna]);
-        resposta2.setText(matrizes.animais[respostas.get(1)][coluna]);
-        resposta3.setText(matrizes.animais[respostas.get(2)][coluna]);
-        resposta4.setText(matrizes.animais[respostas.get(3)][coluna]);
+        pergunta.setText(MatrizPadrao[0][coluna]);
+        respostas = matrizes.sortearRespostas(MatrizPadrao, coluna);
+        resposta1.setText(MatrizPadrao[respostas.get(0)][coluna]);
+        resposta2.setText(MatrizPadrao[respostas.get(1)][coluna]);
+        resposta3.setText(MatrizPadrao[respostas.get(2)][coluna]);
+        resposta4.setText(MatrizPadrao[respostas.get(3)][coluna]);
     }
 
     public void proximaquestao(View view){
@@ -84,10 +114,9 @@ public class Questoes extends AppCompatActivity {
 
 
     public void alternativa1(View view){
-        if(resposta1.getText().equals(matrizes.animais[1][coluna])){
+        if(resposta1.getText().equals(MatrizPadrao[1][coluna])){
             resposta1.setBackgroundResource(R.drawable.botao_correto);
-            acertosAnimais +=10;
-
+            acertos += 10;
         }else{
             resposta1.setBackgroundResource(R.color.Errada);
         }
@@ -99,9 +128,9 @@ public class Questoes extends AppCompatActivity {
     }
 
     public void alternativa2(View view){
-        if(resposta2.getText().equals(matrizes.animais[1][coluna])){
+        if(resposta2.getText().equals(MatrizPadrao[1][coluna])){
             resposta2.setBackgroundResource(R.color.Certa);
-            acertosAnimais += 10;
+            acertos += 10;
         }else{
             resposta2.setBackgroundResource(R.color.Errada);
         }
@@ -113,9 +142,9 @@ public class Questoes extends AppCompatActivity {
     }
 
     public void alternativa3(View view){
-        if(resposta3.getText().equals(matrizes.animais[1][coluna])){
+        if(resposta3.getText().equals(MatrizPadrao[1][coluna])){
             resposta3.setBackgroundResource(R.color.Certa);
-            acertosAnimais += 10;
+            acertos += 10;
         }else{
             resposta3.setBackgroundResource(R.color.Errada);
         }
@@ -127,9 +156,9 @@ public class Questoes extends AppCompatActivity {
     }
 
     public void alternativa4(View view){
-        if(resposta4.getText().equals(matrizes.animais[1][coluna])){
+        if(resposta4.getText().equals(MatrizPadrao[1][coluna])){
             resposta4.setBackgroundResource(R.color.Certa);
-            acertosAnimais += 10;
+            acertos += 10;
         }else{
             resposta4.setBackgroundResource(R.color.Errada);
         }
