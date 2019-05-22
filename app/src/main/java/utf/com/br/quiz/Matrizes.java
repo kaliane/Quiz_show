@@ -108,7 +108,7 @@ public class Matrizes {
         animais[7][9] = "6 anos de vida";
         animais[8][9] = "10 meses de vida";
 
-        animais[0][10] = "Cada felino tem seus costumes habitats e outras coisas, mas o leão tem um inimigo muito grande, mas que ele não ataca, qual é?";
+        animais[0][10] = "O leão tem um inimigo muito grande, mas que ele não ataca, qual é?";
         animais[1][10] = "A hiena";
         animais[2][10] = "O lobo";
         animais[3][10] = "O tamanduá";

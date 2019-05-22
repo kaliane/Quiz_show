@@ -8,31 +8,50 @@
     android:gravity="center"
     tools:context=".Score">
 
+    <TextView
+        android:id="@+id/pontuacao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sua pontuação foi "
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:layout_marginBottom="80dp"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pontuações Gerais"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:layout_marginBottom="30dp"/>
+
     <Button
         android:id="@+id/button1"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:text="Button"
-        android:layout_marginBottom="50dp"/>
+        android:layout_marginBottom="30dp"/>
 
     <Button
         android:id="@+id/button2"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:text="Button"
-        android:layout_marginBottom="50dp"/>
+        android:layout_marginBottom="30dp"/>
 
     <Button
         android:id="@+id/button3"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:text="Button"
-        android:layout_marginBottom="50dp"/>
+        android:layout_marginBottom="30dp"/>
 
     <Button
         android:id="@+id/button4"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="30dp"
         android:text="Button" />
+
 </LinearLayout>
