@@ -1,6 +1,7 @@
 package utf.com.br.quiz;
 
 import android.content.Intent;
+import android.support.annotation.DrawableRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -54,11 +55,11 @@ public class Questoes extends AppCompatActivity {
 
     public void carregarProximaQuestao(){
         proximo.setVisibility(View.INVISIBLE);
-        resposta1.setBackgroundResource(R.color.Padrao);
+        /*resposta1.setBackgroundResource(R.color.Padrao);
         resposta2.setBackgroundResource(R.color.Padrao);
         resposta3.setBackgroundResource(R.color.Padrao);
         resposta4.setBackgroundResource(R.color.Padrao);
-        proximo.setBackgroundResource(R.color.Padrao);
+        proximo.setBackgroundResource(R.color.Padrao);*/
         resposta1.setClickable(true);
         resposta2.setClickable(true);
         resposta3.setClickable(true);
@@ -84,8 +85,9 @@ public class Questoes extends AppCompatActivity {
 
     public void alternativa1(View view){
         if(resposta1.getText().equals(matrizes.animais[1][coluna])){
-            resposta1.setBackgroundResource(R.color.Certa);
-            acertosAnimais += 10;
+            resposta1.setBackgroundResource(R.drawable.botao_correto);
+            acertosAnimais +=10;
+
         }else{
             resposta1.setBackgroundResource(R.color.Errada);
         }

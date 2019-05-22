@@ -4,20 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="#FFFFFF"
     android:gravity="center"
+    android:orientation="vertical"
     tools:context=".MainActivity">
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="154dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="0dp"
-        app:srcCompat="@drawable/quiz_title" />
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ImagenTopo"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/quiz_title" />
+
+    </LinearLayout>
 
 
     <LinearLayout
@@ -29,24 +33,24 @@
             android:layout_width="2dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:layout_margin="5dp"
-            android:padding="20dp"
             android:adjustViewBounds="true"
             android:background="@drawable/border_button"
             android:cropToPadding="true"
             android:onClick="animaisclick"
+            android:padding="20dp"
             android:scaleType="centerInside"
             app:srcCompat="@drawable/animais" />
+
 
         <ImageButton
             android:id="@+id/cinema"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
             android:layout_margin="5dp"
-            android:padding="20dp"
+            android:layout_weight="2"
             android:adjustViewBounds="true"
             android:background="@drawable/border_button"
+            android:padding="20dp"
             android:scaleType="centerInside"
             app:srcCompat="@drawable/cinema" />
     </LinearLayout>
@@ -59,11 +63,11 @@
             android:id="@+id/gerais"
             android:layout_width="1dp"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
             android:layout_margin="5dp"
-            android:padding="20dp"
+            android:layout_weight="2"
             android:adjustViewBounds="true"
             android:background="@drawable/border_button"
+            android:padding="20dp"
             android:scaleType="centerInside"
 
             app:srcCompat="@drawable/conhecimentos_gerais" />
@@ -72,15 +76,24 @@
             android:id="@+id/jogos"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:layout_weight="2"
             android:adjustViewBounds="true"
-            android:layout_margin="5dp"
-            android:padding="20dp"
-
             android:background="@drawable/border_button"
+            android:padding="20dp"
             android:scaleType="centerInside"
             app:srcCompat="@drawable/jogos" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/angry_btn"
+        android:text="Ver Pontuações"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_button"
+        />
 
 </LinearLayout>
