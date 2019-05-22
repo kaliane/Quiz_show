@@ -5,7 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:gravity="center"
     tools:context=".MainActivity">
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="154dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"
+        app:srcCompat="@drawable/quiz_title" />
+</LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,38 +26,61 @@
 
         <ImageButton
             android:id="@+id/animais"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_width="2dp"
+            android:layout_height="wrap_content"
             android:layout_weight="2"
-            app:srcCompat="@drawable/animais"
-            android:onClick="animaisclick"/>
+            android:layout_margin="5dp"
+            android:padding="20dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/border_button"
+            android:cropToPadding="true"
+            android:onClick="animaisclick"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/animais" />
 
         <ImageButton
             android:id="@+id/cinema"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="2"
+            android:layout_margin="5dp"
+            android:padding="20dp"
             android:adjustViewBounds="true"
+            android:background="@drawable/border_button"
+            android:scaleType="centerInside"
             app:srcCompat="@drawable/cinema" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <ImageButton
             android:id="@+id/gerais"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
             android:layout_weight="2"
+            android:layout_margin="5dp"
+            android:padding="20dp"
+            android:adjustViewBounds="true"
+            android:background="@drawable/border_button"
+            android:scaleType="centerInside"
+
             app:srcCompat="@drawable/conhecimentos_gerais" />
 
         <ImageButton
             android:id="@+id/jogos"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="2"
             android:adjustViewBounds="true"
+            android:layout_margin="5dp"
+            android:padding="20dp"
+
+            android:background="@drawable/border_button"
+            android:scaleType="centerInside"
             app:srcCompat="@drawable/jogos" />
 
-
     </LinearLayout>
+
 </LinearLayout>
