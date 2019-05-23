@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -11,7 +12,7 @@ public class Score extends AppCompatActivity {
     public static final String PREFS_NAME ="preference";
     Integer pontSalvaAnimais, pontSalvaCinema, pontSalvaJogos, pontSalvaGerais;
     String spontSalvaAnimais, spontSalvaCinema, spontSalvaJogos, spontSalvaGerais;
-    Integer pontuacaoAnimal, pontCinema, pontJogos, pontGerais;
+    Integer pontuacao = 0;
     Button btnAnimais;
     Button btnCinema;
     Button btnGerais;
@@ -36,10 +37,17 @@ public class Score extends AppCompatActivity {
         btnGerais.setClickable(false);
         btnJogos.setClickable(false);
 
-        pontuacaoAnimal = intent.getIntExtra("Animais", 0);
-        pontCinema = intent.getIntExtra("Cinema", 0);
-        pontJogos = intent.getIntExtra("Jogos",0);
-        pontGerais = intent.getIntExtra("Gerais",0);
+        if(getIntent().hasExtra("Animais")){
+            pontuacao = intent.getIntExtra("Animais", 0);
+        }else if(getIntent().hasExtra("Cinema")){
+            pontuacao = intent.getIntExtra("Cinema", 0);
+        }else if(getIntent().hasExtra("Gerais")){
+            pontuacao = intent.getIntExtra("Jogos",0);
+        }else if(getIntent().hasExtra("Jogos")){
+            pontuacao = intent.getIntExtra("Gerais",0);
+        }else if(getIntent().hasExtra("Menu")){
+            txPontuacao.setVisibility(View.INVISIBLE);
+        }
 
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
 
@@ -83,18 +91,44 @@ public class Score extends AppCompatActivity {
 
 
 
-        if(pontuacaoAnimal > 0) {
-            txPontuacao.setText("Sua pontuação no quiz Animais foi: "+ pontuacaoAnimal.toString());
+        if(pontuacao > 0) {
 
-            if (pontSalvaAnimais < pontuacaoAnimal) {
-                SharedPreferences.Editor editor = settings.edit();
-                editor.putString("ScoreAnimais", pontuacaoAnimal.toString());
-                editor.commit();
+            if(getIntent().hasExtra("Animais")){
+                txPontuacao.setText("Sua pontuação no quiz Animais foi: "+ pontuacao.toString());
+
+                if (pontSalvaAnimais < pontuacao) {
+                    SharedPreferences.Editor editor = settings.edit();
+                    editor.putString("ScoreAnimais", pontuacao.toString());
+                    editor.commit();
+                }
+            }else if(getIntent().hasExtra("Cinema")){
+                txPontuacao.setText("Sua pontuação no quiz Cinema foi: "+ pontuacao.toString());
+
+                if (pontSalvaCinema < pontuacao) {
+                    SharedPreferences.Editor editor = settings.edit();
+                    editor.putString("ScoreCinema", pontuacao.toString());
+                    editor.commit();
+                }
+            }else if(getIntent().hasExtra("Gerais")){
+                txPontuacao.setText("Sua pontuação no quiz Conhecimentos Gerais foi: "+ pontuacao.toString());
+
+                if (pontSalvaGerais < pontuacao) {
+                    SharedPreferences.Editor editor = settings.edit();
+                    editor.putString("ScoreGerais", pontuacao.toString());
+                    editor.commit();
+                }
+            }else if(getIntent().hasExtra("Jogos")){
+                txPontuacao.setText("Sua pontuação no quiz Jogos foi: "+ pontuacao.toString());
+
+                if (pontSalvaJogos < pontuacao) {
+                    SharedPreferences.Editor editor = settings.edit();
+                    editor.putString("ScoreJogos", pontuacao.toString());
+                    editor.commit();
+                }
             }
+
+
         }
-
-
-
 
     }
 }

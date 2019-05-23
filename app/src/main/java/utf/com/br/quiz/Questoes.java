@@ -81,6 +81,7 @@ public class Questoes extends AppCompatActivity {
             intent.putExtra("Gerais", acertos);
         }
         startActivity(intent);
+        finish();
     }
 
     public void carregarProximaQuestao(){

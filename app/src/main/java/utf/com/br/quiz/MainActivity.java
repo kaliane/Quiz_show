@@ -43,4 +43,11 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("Jogos", "Jogos");
         startActivity(intent);
     }
+
+    public void pontuacaoClick(View view){
+
+        Intent intent = new Intent(this, Score.class);
+        intent.putExtra("Menu", "Menu");
+        startActivity(intent);
+    }
 }
