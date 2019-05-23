@@ -42,9 +42,9 @@ public class Score extends AppCompatActivity {
         }else if(getIntent().hasExtra("Cinema")){
             pontuacao = intent.getIntExtra("Cinema", 0);
         }else if(getIntent().hasExtra("Gerais")){
-            pontuacao = intent.getIntExtra("Jogos",0);
-        }else if(getIntent().hasExtra("Jogos")){
             pontuacao = intent.getIntExtra("Gerais",0);
+        }else if(getIntent().hasExtra("Jogos")){
+            pontuacao = intent.getIntExtra("Jogos",0);
         }else if(getIntent().hasExtra("Menu")){
             txPontuacao.setVisibility(View.INVISIBLE);
         }
