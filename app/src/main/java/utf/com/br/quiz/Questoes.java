@@ -54,7 +54,6 @@ public class Questoes extends AppCompatActivity {
             getSupportActionBar().setTitle("Conhecimentos Gerais");
             matrizes.alimentaGerais();
             MatrizPadrao = matrizes.gerais;
-            coluna = 0;
 
             carregarProximaQuestao();
 
@@ -86,11 +85,11 @@ public class Questoes extends AppCompatActivity {
 
     public void carregarProximaQuestao(){
         proximo.setVisibility(View.INVISIBLE);
-        /*resposta1.setBackgroundResource(R.color.Padrao);
-        resposta2.setBackgroundResource(R.color.Padrao);
-        resposta3.setBackgroundResource(R.color.Padrao);
-        resposta4.setBackgroundResource(R.color.Padrao);
-        proximo.setBackgroundResource(R.color.Padrao);*/
+        resposta1.setBackgroundResource(R.drawable.border_button);
+        resposta2.setBackgroundResource(R.drawable.border_button);
+        resposta3.setBackgroundResource(R.drawable.border_button);
+        resposta4.setBackgroundResource(R.drawable.border_button);
+        proximo.setBackgroundResource(R.drawable.border_button);
         resposta1.setClickable(true);
         resposta2.setClickable(true);
         resposta3.setClickable(true);
@@ -119,7 +118,7 @@ public class Questoes extends AppCompatActivity {
             resposta1.setBackgroundResource(R.drawable.botao_correto);
             acertos += 10;
         }else{
-            resposta1.setBackgroundResource(R.color.Errada);
+            resposta1.setBackgroundResource(R.drawable.botao_errado);
         }
         resposta1.setClickable(false);
         resposta2.setClickable(false);
@@ -130,10 +129,10 @@ public class Questoes extends AppCompatActivity {
 
     public void alternativa2(View view){
         if(resposta2.getText().equals(MatrizPadrao[1][coluna])){
-            resposta2.setBackgroundResource(R.color.Certa);
+            resposta2.setBackgroundResource(R.drawable.botao_correto);
             acertos += 10;
         }else{
-            resposta2.setBackgroundResource(R.color.Errada);
+            resposta2.setBackgroundResource(R.drawable.botao_errado);
         }
         resposta1.setClickable(false);
         resposta2.setClickable(false);
@@ -144,10 +143,10 @@ public class Questoes extends AppCompatActivity {
 
     public void alternativa3(View view){
         if(resposta3.getText().equals(MatrizPadrao[1][coluna])){
-            resposta3.setBackgroundResource(R.color.Certa);
+            resposta3.setBackgroundResource(R.drawable.botao_correto);
             acertos += 10;
         }else{
-            resposta3.setBackgroundResource(R.color.Errada);
+            resposta3.setBackgroundResource(R.drawable.botao_errado);
         }
         resposta1.setClickable(false);
         resposta2.setClickable(false);
@@ -158,10 +157,10 @@ public class Questoes extends AppCompatActivity {
 
     public void alternativa4(View view){
         if(resposta4.getText().equals(MatrizPadrao[1][coluna])){
-            resposta4.setBackgroundResource(R.color.Certa);
+            resposta4.setBackgroundResource(R.drawable.botao_correto);
             acertos += 10;
         }else{
-            resposta4.setBackgroundResource(R.color.Errada);
+            resposta4.setBackgroundResource(R.drawable.botao_errado);
         }
         resposta1.setClickable(false);
         resposta2.setClickable(false);

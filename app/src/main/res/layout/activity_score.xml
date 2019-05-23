@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/background"
     android:gravity="center"
     tools:context=".Score">
 
     <TextView
         android:id="@+id/pontuacao"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sua pontuação foi "
         android:textAlignment="center"
         android:textSize="24sp"
-        android:layout_marginBottom="80dp"/>
+        android:layout_marginBottom="80dp"
+
+        />
 
     <TextView
         android:id="@+id/textView"
@@ -26,32 +29,90 @@
         android:textSize="24sp"
         android:layout_marginBottom="30dp"/>
 
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal">
+       <TextView
+           android:id="@+id/textView1"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="Animais: "
+           android:textAlignment="center"
+           android:textSize="24sp"
+           android:layout_marginBottom="30dp"/>
     <Button
         android:id="@+id/button1"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:text="Button"
-        android:layout_marginBottom="30dp"/>
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/border_button"
+        />
+   </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cinema: "
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:layout_marginBottom="30dp"/>
 
     <Button
         android:id="@+id/button2"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:text="Button"
-        android:layout_marginBottom="30dp"/>
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/border_button"/>
+    </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gerais:   "
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:layout_marginBottom="30dp"/>
     <Button
         android:id="@+id/button3"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:text="Button"
-        android:layout_marginBottom="30dp"/>
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/border_button"/>
+    </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jogos:   "
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:layout_marginBottom="30dp"/>
     <Button
         android:id="@+id/button4"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="30dp"
-        android:text="Button" />
+        android:text="Button"
+        android:background="@drawable/border_button"/>
+    </LinearLayout>
 
 </LinearLayout>
